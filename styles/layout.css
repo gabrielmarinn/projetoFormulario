@@ -15,7 +15,7 @@ main {
     /* Espaçamento interno */
     padding: 4rem;
 
-    & .main-container {
+    & .main__container {
         /* Definindo largura maxima para o container que esta dentro de main */
         max-width: 33rem;
         /* Espaçamento externo a esquerda */
