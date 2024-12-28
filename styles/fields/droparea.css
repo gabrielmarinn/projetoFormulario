@@ -1,0 +1,57 @@
+.dropzone {
+    /* Definindo borda 2px pontilhada e transparente */
+    border: 2px dashed transparent;
+    /* Definindo linha externa do elemento 1px pontilhada */
+    outline: 1px dashed var(--stroke-default);
+    /* Arredondamento das bordas */
+    border-radius: .25rem;
+    /* Definindo como display grid para utilizar propriedades de alinhamento */
+    display: grid;
+    /* Centralizando item no eixo X */
+    justify-items: center;
+    /* Espaçamento entre os elementos */
+    gap: .5rem;
+    /* Centralizando texto no eixo X */
+    text-align: center;
+    /* Espaçamento interno */
+    padding: 1.75rem 1rem;
+    /* Ajustando sua posicao para que possa ser alterado sua posição em relação a sua posição original no documento  */
+    position: relative;
+
+    & input {
+        /* Ajustando posição do input como absoluta dentro de dropzone */
+        position: absolute;
+        /* Largura */
+        width: 100%;
+        /* Altura */
+        height: 100%;
+        /* Alinhando o elemente na posição start da caixa com inset 0 */
+        inset: 0;
+        /* Removendo elementos padrão com opacidade 0 */
+        opacity: 0;
+    }
+
+    & p {
+        /* Cor */
+        color: #a8a29e;
+    }
+
+    /* Estilizando elemento quando passar o mouse em cima com :hover e verificando se ele esta em foco com :has (&:se (input esta em foco) aplique */
+    &:hover, &:has(input:focus) {
+        outline-width: 0;
+        /* Cor de borda */
+        border-color: var(--stroke-highlight);
+        /* Cor de fundo do input */
+        background-color: var(--surface-secondary);
+
+        & p {
+            /* Cor */
+            color: var(--text-tertiary);
+        }
+
+        & svg path {
+            /* Alterando a cor do svg com o comando stroke que altera as linhas do svg */
+            stroke: var(--stroke-highlight);
+        }
+    }
+}

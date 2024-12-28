@@ -1,0 +1,36 @@
+@import url(fields/index.css);
+
+form {
+    /* Espaçamento externo em cima */
+    margin-top: 3rem;
+}
+
+fieldset {
+    /* Retirando bordas */
+    border: none;
+    /* Definindo display como grid */
+    display: grid;
+    /* Espaçamento entre os elementos dentro de fieldset */
+    gap: 1.5rem;
+}
+
+legend {
+    /* Definindo font */
+    font: 600 1rem/1.25 var(--font-family);
+    /* Espaçamento externo em baixo */
+    margin-bottom: 1.5rem;
+}
+
+/* Alterando espaçamento externo em cima quando tiver um fieldset e anterios a ele outro fieldset */
+fieldset + fieldset {
+    margin-top: 3rem;
+}
+
+.actions-wrapper {
+    /* Espaçamento externo em cima */
+    margin-top: 3rem;
+    /* Display flex para movimentar os elementos */
+    display: flex;
+    /* Espaçamento interno */
+    gap: 1rem;
+}

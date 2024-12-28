@@ -1,0 +1,39 @@
+button {
+    /* Retirando configuração do botão */
+    all: unset;
+    /* Peso de font */
+    font-weight: 500;
+    /* Cor */
+    color: var(--text-highlight);
+    /* Espaçamento interno */
+    padding: .75rem 1.5rem;
+    /* Arredondamento de bordas */
+    border-radius: .5rem;
+    /* Pointer pra quand o mouse estiver em cima ele alterar o ponteiro para uma mão */
+    cursor: pointer;
+
+    /* Estilizando botao que tenha a classe btn-primary */
+    &.btn-primary {
+        color: white;
+        background-color: #e43a12;
+
+        /* Estilizando o botão pra quando estiver com o mouse em cima e em foco */
+        &:hover,
+        &:focus {
+            background-color: #f3541c;
+        }
+    }
+
+    /* Estilizando botao que tenha a classe btn-secondary */
+    &.btn-secondary {
+        margin-left: auto;
+        border: 1px solid var(--text-highlight);
+
+        /* Estilizando o botão pra quando estiver com o mouse em cima e em foco */
+        &:hover,
+        &:focus {
+            color: #e43a12;
+            outline: .25rem solid var(--surface-secondary);
+        }
+    }
+}

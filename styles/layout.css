@@ -1,0 +1,70 @@
+#app {
+    /* Definindo grid de layout para que a pagina se divida em 2  */
+    display: grid;
+    /* Grid em colunas sendo a da esquerda 51.25% do total da pagina e a direita 48.75% */
+    grid-template-columns: 51.25% 48.75%;
+    /* Altura  */
+    height: 100vh;
+    /* Retirando qualquer transbordamento da pagina */
+    overflow: hidden;
+}
+
+main {
+    /* Definindo overflow auto para que haja transbordamento e rolagem somente no lado do grid definido como main */
+    overflow: auto;
+    /* Espaçamento interno */
+    padding: 4rem;
+
+    & .main-container {
+        /* Definindo largura maxima para o container que esta dentro de main */
+        max-width: 33rem;
+        /* Espaçamento externo a esquerda */
+        margin-left: auto;
+    }
+
+    & .back {
+        /* Estilizando class back que esta dentro de main */
+        /* Definindo como display flex para que a imagem e texto fiquem um ao lado do outro */
+        display: flex;
+        /* Alinhamento no eixo Y */
+        align-items: center;
+        /* Espaçamento entre os elementos */
+        gap: .5rem;
+        /* Espaçamento externo em baixo */
+        margin-bottom: 1.5rem;
+    }
+
+    & h1 {
+        /* Definindo font em h1 dentro de main */
+        font: 600 1.5rem/1.25 var(--font-family);
+    }
+}
+aside {
+    /* Definindo cor de fundo para o lado do grid definido como aside */
+    background-color: var(--surface-secondary);
+    /* Espaçamento interno */
+    padding: 4rem;
+
+    & .aside-container {
+        /* Definindo largura maxima para o container dentro de aside */
+        max-width: 31rem;
+
+        & > img {
+            /* Estilizando o primeiro nivel de imagem dentro de aside-container */
+            /* Espaçamento externo em cima */
+            margin-top: 2rem;
+        }
+    }
+
+    & h2 {
+        /* Definindo font para o h2 dentro de aside */
+        font: 600 2.5rem/1.25 var(--font-family);
+        /* Espaçamento externo */
+        margin-bottom: .5rem;
+
+        & span {
+            /* Definindo cor para span dentro de h2 */
+            color: var(--text-highlight);
+        }
+    }
+}

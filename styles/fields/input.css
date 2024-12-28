@@ -1,0 +1,140 @@
+input, 
+textarea, 
+select {
+    /* Retirando qualquer tipo de aparencia padrão */
+    appearance: none;
+    /* Largura*/
+    width: 100%;
+    /* Arredondamento de borda */
+    border-radius: .5rem;
+    /* Denindo borda de 2px solid transparente */
+    border: 2px solid transparent;
+    /* Definindo linha por fora do elemento */
+    outline: 1px solid var(--stroke-default);
+    /* Espaçamento interno */
+    padding: .75rem 1rem;
+    /* Definindo font */
+    font: var(--text);
+} 
+
+label {
+    /* Definindo font */
+    font: var(--text-sm);
+    /* Definindo cor */
+    color: var(--text-secondary);
+    /* Definindo como display block para que possa ser usado espaçamento externo */
+    display: block;
+    /* Espaçamento externo em baixo */
+    margin-bottom: .25rem;
+}
+
+/* Estilizando elementos que estiverem focados */
+input:focus,
+select:focus,
+textarea:focus {
+    /* Definindo linha por fora do elemento */
+    outline: .25rem solid var(--surface-secondary);
+    /* Cor de borda */
+    border-color: var(--stroke-highlight);
+    /* Adaptando outline para outros navegadores que nao conseguirem identificar somente o outline padrão definido */
+    outline-offset: .1px;
+}
+
+/* Estilizando qualquer input que tenha o tipo date */
+input[type="date"] {
+    /* Alterando a posicao do calendario que existe no input date */
+    position: relative;
+
+    /* Seletor que permite que eu modifique esse calendario */
+    &::-webkit-calendar-picker-indicator {
+        /* Mantendo a opacidade dele como 0 para ele desaparecer */
+        opacity: 0;
+    }
+
+    /* Usando pseudo class ::before para alterar a imagem e compartamento desse calendario */
+    &::before {
+        /* Criando um elemento html vazio pelo css com content */
+        content: "";
+        /* Posicao absolute para que ele mantenha sua posicao original */
+        position: absolute;
+        /* Imagem do calendario */
+        background: url(../../assets/icons/calendar-03.svg) center/contain;
+        /* Ajuste de posição a direita */
+        right: 1rem;
+        /* Ajuste de largura */
+        width: 1.25rem;
+        /* Ajuste de altura */
+        height: 1.25rem;
+        /* Ajustando o inicio do icone para começar em 50% da caixa em que ele esta */
+        top: 50%;
+        /* TranslateY para que ele se mova -50% dentro da caixa atraves do tamanho dele mesmo no eixo Y para centralizar a imagem */
+        transform: translateY(-50%);
+    }
+}
+
+select {
+    /* Definindo imagem de seta para o input, com a propriedade para nao se repetir e um calculo de 100% a direita - 1rem para ter um gap entre ele e a borda */
+    background: url(../../assets/icons/arrow-down-01.svg) no-repeat calc(100% - 1rem);
+}
+
+.address .flex {
+    /* Espaçamento entre os elementos quando dentro de adress tiverem a classe flex */
+    gap: 1.25rem;
+}
+
+/* Estilizar todo input-wrapper que tenha (:has) disabled */
+.input-wrapper:has([disabled]) {
+    /* Alterando sua opacidade */
+    opacity: .5;
+}
+
+input {
+    /* Estilizando input que esteja desabilitado */
+    &[disabled] {
+        /* Cor de fundo */
+        background-color: var(--surface-disabled);
+        /* Borda */
+        border: 1px solid var(--stroke-default);
+        /* Cor */
+        color: var(--text-primary);
+    }
+
+    /* Estilizando input que seja invalido */
+    &:invalid {
+        /* Borda */
+        border: 0.125rem solid var(--semantic-error);
+    }
+
+    /* Estilizando o input que tenha um small como irmao */
+    & + small {
+        /* Definindo font */
+        font: var(--text-sm);
+        /* Cor */
+        color: #78716c;
+        /* Definindo como inline-block para que possa colocar espaçamento externo no elemento */
+        display: inline-block;
+        /* Espaçamento externo em cima */
+        margin-top: .25rem;
+    }
+    
+    /* Se no required tiver um erro como irmao aplique */
+    &[required] + .error {
+        /* Display flex para que fique um ao lado do outro */
+        display: flex;
+        /* Centralizando elementos no eixo Y */
+        align-items: center;
+        /* Espaçamento entre elementos */
+        gap: .25rem;
+        /* Font */
+        font: var(--text-sm);
+        /* Cor */
+        color: var(--semantic-error);
+        /* Espaçamento externo em cima */
+        margin-top: .25rem;
+    }
+
+    /* Quando o o input nao estiver em foco e estiver valido com o irmao error. Retire o irmao error*/
+    &:not(:focus):valid + .error {
+        display: none;
+    }
+}

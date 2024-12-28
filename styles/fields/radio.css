@@ -1,0 +1,77 @@
+/* Estilizando o label que tenha seguido dele a classe .radio-wrapper */
+label + .radio-wrapper {
+    /* Espaçamento externo */
+    margin-top: 1rem;
+}
+
+.radio-wrapper {
+    /* Definindo display grid */
+    display: grid;
+    /* Usando as propriedades repeat(auto-fit) para que o proprio grid faça quantas colunas e linhas for necessario, mantendo um padrao de tamanho de minmax 7.5rem e 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
+    /* Espaçamento entre os elementos */
+    gap: 1rem;
+}
+
+.radio-inner {
+    /* Definindo borda */
+    border: 1px solid var(--stroke-default);
+    /* Arredondamento de borda */
+    border-radius: .5rem;
+    /* Definindo display grid */
+    display: grid;
+    /* Alinhando os elementos no eixo X */
+    justify-items: center;
+    /* Espaçamento entre os elementos */
+    gap: .5rem;
+    /* Espaçamento interno dos elementos */
+    padding: 2rem .5rem .5rem;
+    /* Definindo posição relative para que possa ser movimentado em qualquer lugar do container */
+    position: relative;
+
+    & input,
+    & input:focus,
+    & input:hover {
+        /* Retirando todas as informaçoes padrão do input */
+        all: unset;
+        /* Ajustando posicao dos input para que fique sobre todas os elementos */
+        position: absolute;
+        /* Ajustando sua posicao com inset para que fique no inicio do container */
+        inset: 0;
+    }
+
+    .radio-image {
+        /* Definindo imagem */
+        background-image: url(../../assets/icons/radio-default.svg);
+        /* Largura */
+        width: 1.5rem;
+        /* Altura */
+        height: 1.5rem;
+        /* Ajustando posição para que fique sobre todos os elementos */
+        position: absolute;
+        /* Ajustando posicao para que fique no topo e lado esquerdo */
+        top: .5rem;
+        left: .5rem;
+    }
+
+    /* Estilizando o input para quando estiver com o mouse em cima e quando estiver em foco */
+    &:hover,
+    &:focus-within {
+        /* Borda */
+        border: 1px solid var(--stroke-highlight);
+
+        &.radio-image {
+            background-image: url(../../assets/icons/radio-hover.svg);
+        }
+    }
+
+    /* Estilizando input para quando ele ter a propriedade checked */
+    &:has(:checked) {
+        /* Borda */
+        border: 2px solid var(--stroke-highlight);
+
+        & .radio-image {
+            background-image: url(../../assets/icons/radio-checked.svg);
+        }
+    }
+}
