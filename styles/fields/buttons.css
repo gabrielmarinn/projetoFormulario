@@ -12,8 +12,8 @@ button {
     /* Pointer pra quand o mouse estiver em cima ele alterar o ponteiro para uma mão */
     cursor: pointer;
 
-    /* Estilizando botao que tenha a classe btn-primary */
-    &.btn-primary {
+    /* Estilizando botao que tenha a classe btn__primary */
+    &.btn__primary {
         color: white;
         background-color: #e43a12;
 
@@ -24,8 +24,8 @@ button {
         }
     }
 
-    /* Estilizando botao que tenha a classe btn-secondary */
-    &.btn-secondary {
+    /* Estilizando botao que tenha a classe btn__secondary */
+    &.btn__secondary {
         margin-left: auto;
         border: 1px solid var(--text-highlight);
 

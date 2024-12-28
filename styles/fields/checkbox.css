@@ -1,4 +1,4 @@
-.terms-wrapper {
+.terms__wrapper {
     /* Espaçamento externo em cima */
     margin-top: 3rem;
     /* Display flexivel */
@@ -8,14 +8,14 @@
     /* Alinhando elementos no eixo Y */
     align-items: flex-start;
 
-    /* Estilizando o elemento strong dentro de terms-wrapper com peso de font e cor */
+    /* Estilizando o elemento strong dentro de terms__wrapper com peso de font e cor */
     & strong {
         font-weight: 500;
         color: var(--text-highlight);
     }
 }
 
-.checkbox-wrapper {
+.checkbox__wrapper {
     /* Posicao relative para que possa alterar a posicao dos elementos dentro do container */
     position: relative;
 
@@ -28,7 +28,7 @@
         inset: 0;
     }
 
-    .checkbox-image {
+    .checkbox__image {
         /* Retirando no primeiro valor para que a imagem nao se estique, no segundo valor nao se encolha e terceiro valor um tamanho */
         flex: 0 0 1.5rem;
         /* Altura */
@@ -41,13 +41,13 @@
     /* Estilizando elemento para quando passar o mouse em cima e estiver em foco */
     &:hover,
     &:focus-within {
-        .checkbox-image {
+        .checkbox__image {
             background-image: url(../../assets/icons/checkbox-hover.svg);
         }
     }
 
     /* Estilizando elemento para que quando ele tenha checked mude a imagem */
-    &:has(:checked) .checkbox-image {
+    &:has(:checked) .checkbox__image {
         background-image: url(../../assets/icons/checkbox-checked.svg);
     }
 }

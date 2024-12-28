@@ -1,10 +1,10 @@
-/* Estilizando o label que tenha seguido dele a classe .radio-wrapper */
-label + .radio-wrapper {
+/* Estilizando o label que tenha seguido dele a classe .radio__wrapper */
+label + .radio__wrapper {
     /* Espaçamento externo */
     margin-top: 1rem;
 }
 
-.radio-wrapper {
+.radio__wrapper {
     /* Definindo display grid */
     display: grid;
     /* Usando as propriedades repeat(auto-fit) para que o proprio grid faça quantas colunas e linhas for necessario, mantendo um padrao de tamanho de minmax 7.5rem e 1fr */
@@ -13,7 +13,7 @@ label + .radio-wrapper {
     gap: 1rem;
 }
 
-.radio-inner {
+.radio__inner {
     /* Definindo borda */
     border: 1px solid var(--stroke-default);
     /* Arredondamento de borda */
@@ -40,7 +40,7 @@ label + .radio-wrapper {
         inset: 0;
     }
 
-    .radio-image {
+    .radio__image {
         /* Definindo imagem */
         background-image: url(../../assets/icons/radio-default.svg);
         /* Largura */
@@ -60,7 +60,7 @@ label + .radio-wrapper {
         /* Borda */
         border: 1px solid var(--stroke-highlight);
 
-        &.radio-image {
+        &.radio__image {
             background-image: url(../../assets/icons/radio-hover.svg);
         }
     }
@@ -70,7 +70,7 @@ label + .radio-wrapper {
         /* Borda */
         border: 2px solid var(--stroke-highlight);
 
-        & .radio-image {
+        & .radio__image {
             background-image: url(../../assets/icons/radio-checked.svg);
         }
     }

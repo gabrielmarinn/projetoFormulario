@@ -82,8 +82,8 @@ select {
     gap: 1.25rem;
 }
 
-/* Estilizar todo input-wrapper que tenha (:has) disabled */
-.input-wrapper:has([disabled]) {
+/* Estilizar todo input__wrapper que tenha (:has) disabled */
+.input__wrapper:has([disabled]) {
     /* Alterando sua opacidade */
     opacity: .5;
 }

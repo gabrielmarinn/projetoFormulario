@@ -45,12 +45,12 @@ aside {
     /* Espaçamento interno */
     padding: 4rem;
 
-    & .aside-container {
+    & .aside__container {
         /* Definindo largura maxima para o container dentro de aside */
         max-width: 31rem;
 
         & > img {
-            /* Estilizando o primeiro nivel de imagem dentro de aside-container */
+            /* Estilizando o primeiro nivel de imagem dentro de aside__container */
             /* Espaçamento externo em cima */
             margin-top: 2rem;
         }
